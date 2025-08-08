@@ -20,7 +20,7 @@ namespace Backend.Controllers
         [HttpGet("{productCode}")]
         public async Task<IActionResult> GetOrderDetail(int orderNumber, string productCode)
         {
-            var detail = await _context.OrderDetails
+            var detail = await _context.orderdetails
                 .FirstOrDefaultAsync(od => od.OrderNumber == orderNumber && od.ProductCode == productCode);
 
             if (detail == null) return NotFound(new { message = "Order detail not found" });
@@ -31,7 +31,7 @@ namespace Backend.Controllers
         [HttpPut("edit/{productCode}")]
         public async Task<IActionResult> EditOrderDetail(int orderNumber, string productCode, [FromBody] OrderDetail updatedDetail)
         {
-            var detail = await _context.OrderDetails
+            var detail = await _context.orderdetails
                 .FirstOrDefaultAsync(od => od.OrderNumber == orderNumber && od.ProductCode == productCode);
 
             if (detail == null) return NotFound(new { message = "Order detail not found" });
@@ -48,12 +48,12 @@ namespace Backend.Controllers
         [HttpDelete("{productCode}")]
         public async Task<IActionResult> DeleteProductFromOrder(int orderNumber, string productCode)
         {
-            var detail = await _context.OrderDetails
+            var detail = await _context.orderdetails
                 .FirstOrDefaultAsync(od => od.OrderNumber == orderNumber && od.ProductCode == productCode);
 
             if (detail == null) return NotFound(new { message = "Order detail not found" });
 
-            _context.OrderDetails.Remove(detail);
+            _context.orderdetails.Remove(detail);
             await _context.SaveChangesAsync();
 
             return Ok(new { message = $"Product {productCode} removed from order {orderNumber}" });
