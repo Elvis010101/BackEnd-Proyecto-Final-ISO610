@@ -1,6 +1,0 @@
-{
-  "build": {
-    "buildCommand": "dotnet build BackEnd",
-    "startCommand": "dotnet run --project BackEnd --urls=http://0.0.0.0:$PORT"
-  }
-}
