@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BackEndProyectoFinalIso610.DATA;
+using Backend.Data;
 using BackEndProyectoFinalIso610.Models;
 
 namespace BackEndProyectoFinalIso610.Controllers
