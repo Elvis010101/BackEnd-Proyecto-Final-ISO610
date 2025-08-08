@@ -112,3 +112,12 @@ C:\Users\Elvis Almanzar\Source\Repos\BackEnd-Proyecto-Final-ISO610\BackEndProyec
 C:\Users\Elvis Almanzar\Source\Repos\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.pdb
 C:\Users\Elvis Almanzar\Source\Repos\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.genruntimeconfig.cache
 C:\Users\Elvis Almanzar\Source\Repos\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\ref\BackEndProyectoFinalIso610.dll
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.csproj.AssemblyReference.cache
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.AssemblyInfoInputs.cache
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.AssemblyInfo.cs
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.csproj.CoreCompileInputs.cache
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bryan\source\repos\BackEnd-Proyecto-Final-ISO610\BackEnd-Proyecto-Final-ISO610\BackEndProyectoFinalIso610\obj\Debug\net8.0\BackEndProyectoFinalIso610.sourcelink.json

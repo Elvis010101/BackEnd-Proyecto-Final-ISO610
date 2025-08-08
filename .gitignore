@@ -1,0 +1,22 @@
+# Ignorar carpetas y archivos temporales de Visual Studio
+.vs/
+
+# Archivos binarios y de build
+bin/
+obj/
+
+# Archivos de configuracion de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Otros archivos temporales comunes
+*.log
+*.tmp
+
+# Archivos de base de datos locales (si usas SQLite por ejemplo)
+*.db
+
+# Carpetas de paquetes NuGet
+packages/
