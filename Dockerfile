@@ -9,7 +9,7 @@ RUN dotnet restore BackEnd/BackEnd.csproj
 COPY . .
 
 WORKDIR /src/BackEnd
-RUN dotnet publish -c Release -o /app/publish --no-restore
+RUN dotnet publish BackEndProyectoFinalIso610.sln -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
