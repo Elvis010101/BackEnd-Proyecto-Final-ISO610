@@ -24,8 +24,8 @@ namespace BackEndProyectoFinalIso610.Controllers
             return Ok(orders);
         }
 
-        // PUT: api/orders/Create
-        [HttpPut("Create")]
+        // Post: api/orders/Create
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateOrder([FromBody] Order order)
         {
             if (order == null)
