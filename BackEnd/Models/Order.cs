@@ -13,16 +13,7 @@ namespace BackEndProyectoFinalIso610.Models
         public DateTime? ShippedDate { get; set; }
         public string? Status { get; set; }
         public string? Comments { get; set; }
-        public int GetCustumerNumber()
-        {
-            return custumerNumber;
-        }
+       public int CustomerNumber { get; set; }
 
-        public void SetCustumerNumber(int value) => custumerNumber = value;
-
-        public Order(int custumerNumber)
-        {
-            SetCustumerNumber(custumerNumber);
-        }
     }
 }
