@@ -12,5 +12,10 @@ namespace BackEndProyectoFinalIso610.Models
         public string? Status { get; set; }
         public string? Comments { get; set; }
         public int CustumerNumber { get; set; }
+
+        public Order(int custumerNumber)
+        {
+            CustumerNumber = custumerNumber;
+        }
     }
 }
