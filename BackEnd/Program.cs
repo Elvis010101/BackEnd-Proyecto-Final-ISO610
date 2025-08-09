@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BackEndProyectoFinalIso610.Controllers;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +46,15 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddControllers();
 
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("policy", app =>
+    {
+        app.WithOrigins("*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+
+    });
+
+});
 
 
 var app = builder.Build();
@@ -52,14 +62,21 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "BackEnd v1");
+    });
+
 }
+
+app.UseCors("policy");
+
 //app.UseAuthentication(); // Uncomment this line para habilitar la authentication
 app.UseAuthorization();
 app.MapControllers();
 
 // Obtener el puerto de entorno asignado por Railway o usar 5000 por defecto
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-app.Urls.Add($"http://*:{port}");
+/*var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://:{port}");*/
 
 app.Run();
