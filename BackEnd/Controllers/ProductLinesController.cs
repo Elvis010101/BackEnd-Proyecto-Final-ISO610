@@ -30,17 +30,10 @@ namespace Backend.Controllers
         {
             if (productLine == null) return BadRequest("Invalid product line data");
 
-            try
-            {
-                _context.productlines.Add(productLine);
-                await _context.SaveChangesAsync();
+            _context.productlines.Add(productLine);
+            await _context.SaveChangesAsync();
 
-                return Created("", new { message = $"Product line '{productLine.ProductLineName}' created successfully" });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
-            }
+            return Created("", new { message = $"Product line '{productLine.ProductLineName}' created successfully" });
         }
 
         // DELETE: api/productlines/{productLine}/Delete
