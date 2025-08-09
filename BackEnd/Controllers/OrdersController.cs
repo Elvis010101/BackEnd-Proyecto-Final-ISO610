@@ -31,12 +31,19 @@ namespace BackEndProyectoFinalIso610.Controllers
             if (order == null)
                 return BadRequest("Invalid order data");
 
-            _context.orders.Add(order);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.orders.Add(order);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetAllOrders),
-                new { orderNumber = order.OrderNumber },
-                new { message = "Order created successfully", order.OrderNumber });
+                return CreatedAtAction(nameof(GetAllOrders),
+                    new { orderNumber = order.OrderNumber },
+                    new { message = "Order created successfully", order.OrderNumber });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+            }
         }
 
         // DELETE: api/orders/{orderNumber}/Delete

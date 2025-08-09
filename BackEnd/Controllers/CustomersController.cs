@@ -25,9 +25,16 @@ namespace Backend.Controllers
         [HttpPost("Create")]
         public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
         {
-            _context.customers.Add(customer);
-            await _context.SaveChangesAsync();
-            return Created("", new { message = "Customer created successfully", customerNumber = customer.CustomerNumber });
+            try
+            {
+                _context.customers.Add(customer);
+                await _context.SaveChangesAsync();
+                return Created("", new { message = "Customer created successfully", customerNumber = customer.CustomerNumber });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+            }
         }
 
         [HttpDelete("{customerNumber}/Delete")]

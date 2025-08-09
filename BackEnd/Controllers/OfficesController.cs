@@ -25,9 +25,16 @@ namespace Backend.Controllers
         [HttpPost("Create")]
         public async Task<IActionResult> CreateOffice([FromBody] Office office)
         {
-            _context.offices.Add(office);
-            await _context.SaveChangesAsync();
-            return Created("", new { message = $"Office '{office.OfficeCode}' created successfully" });
+            try
+            {
+                _context.offices.Add(office);
+                await _context.SaveChangesAsync();
+                return Created("", new { message = $"Office '{office.OfficeCode}' created successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+            }
         }
 
         [HttpDelete("{officeCode}/Delete")]
