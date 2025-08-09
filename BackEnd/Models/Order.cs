@@ -4,6 +4,8 @@ namespace BackEndProyectoFinalIso610.Models
 {
     public class Order
     {
+        private int custumerNumber;
+
         [Key]
         public int OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
@@ -11,11 +13,16 @@ namespace BackEndProyectoFinalIso610.Models
         public DateTime? ShippedDate { get; set; }
         public string? Status { get; set; }
         public string? Comments { get; set; }
-        public int CustumerNumber { get; set; }
+        public int GetCustumerNumber()
+        {
+            return custumerNumber;
+        }
+
+        public void SetCustumerNumber(int value) => custumerNumber = value;
 
         public Order(int custumerNumber)
         {
-            CustumerNumber = custumerNumber;
+            SetCustumerNumber(custumerNumber);
         }
     }
 }
