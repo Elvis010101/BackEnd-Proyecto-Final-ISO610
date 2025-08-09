@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://https://backendiso610.up.railway.app",
+      "applicationUrl": "http://https://testbackendiso610.up.railway.app",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://https://backendiso610.up.railway.app",
+      "applicationUrl": "https://https://testbackendiso610.up.railway.app",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

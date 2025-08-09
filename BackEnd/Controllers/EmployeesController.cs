@@ -25,10 +25,18 @@ namespace Backend.Controllers
         [HttpPost("Create")]
         public async Task<IActionResult> CreateEmployee([FromBody] Employee employee)
         {
-            _context.employees.Add(employee);
-            await _context.SaveChangesAsync();
-            return Created("", new { message = "Employee REGISTERED successfully", id = employee.EmployeeNumber });
+            try
+            {
+                _context.employees.Add(employee);
+                await _context.SaveChangesAsync();
+                return Created("", new { message = "Employee REGISTERED successfully", id = employee.EmployeeNumber });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+            }
         }
+
 
         [HttpDelete("{employeeNumber}/Delete")]
         public async Task<IActionResult> DeleteEmployee(int employeeNumber)
