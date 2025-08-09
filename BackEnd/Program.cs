@@ -76,7 +76,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Obtener el puerto de entorno asignado por Railway o usar 5000 por defecto
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Urls.Add($"http://:{port}");
 
 app.Run();
