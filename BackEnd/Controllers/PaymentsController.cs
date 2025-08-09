@@ -26,17 +26,10 @@ namespace Backend.Controllers
         [HttpPost("Create")]
         public async Task<IActionResult> CreatePayment(int customerNumber, [FromBody] Payment payment)
         {
-            try
-            {
-                payment.CustomerNumber = customerNumber;
-                _context.payments.Add(payment);
-                await _context.SaveChangesAsync();
-                return Created("", new { message = $"Payment registered for customer {customerNumber}" });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
-            }
+            payment.CustomerNumber = customerNumber;
+            _context.payments.Add(payment);
+            await _context.SaveChangesAsync();
+            return Created("", new { message = $"Payment registered for customer {customerNumber}" });
         }
 
         [HttpDelete("{checkNumber}/Delete")]
