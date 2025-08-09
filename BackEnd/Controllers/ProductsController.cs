@@ -31,12 +31,19 @@ namespace BackEndProyectoFinalIso610.Controllers
             if (product == null)
                 return BadRequest("Invalid product data");
 
-            _context.products.Add(product);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.products.Add(product);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetAllProducts),
-                new { productCode = product.ProductCode },
-                new { message = "Product created successfully", product.ProductCode });
+                return CreatedAtAction(nameof(GetAllProducts),
+                    new { productCode = product.ProductCode },
+                    new { message = "Product created successfully", product.ProductCode });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+            }
         }
 
         // DELETE: api/products/Delete/{productCode}
